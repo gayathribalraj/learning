@@ -1,0 +1,40 @@
+.card-group{
+    display: flex;
+    flex-direction: column;
+    max-width: 35%;
+    cursor: pointer;
+}
+
+
+ion-icon{
+    font-size: 20px;
+    color: rgb(0, 0, 255);
+
+    
+}
+ion-icon:hover {
+    color: #2c3e50;
+  }
+
+ion-card{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+
+    
+}
+
+ion-card:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 255, 0.045);
+
+}
+
+h3:hover{
+font-size: medium;
+}
+
+h3{
+    font-size: 15px;
+    color: #000;
+    font-family:'Times New Roman', Times, serif;
+
+}
