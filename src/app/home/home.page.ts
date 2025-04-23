@@ -15,25 +15,36 @@ export class HomePage implements OnInit {
 
    data =[
     {
-      name:'Gayathri',
-      mobile:'488855555',
-      amount:123545
+      Name:'Gayathri',
+      Mobile:'488855555',
+      Amount:123545,
+      Location:"Chennai",
+      progress:0.20
   
     },
     {
-      name:'sure',
-      mobile:'488855555',
-      amount:123545
+      Name:'Neha',
+      Mobile:'488855555',
+      Amount:123545,
+      Location:"Thirunelveli",
+      progress:0.50
+
   
     },
     {
-      name:'moni',
-      mobile:'488855555',
-      amount:123545
+      Name:'Monika',
+      Mobile:'488855555',
+      Amount:123545,
+      Location:"Madhurai",
+      progress:0.80
+
   
-    },
+    }
 
    ]
+
+
+   
 
 
   routeCard(datas:any){
@@ -41,7 +52,21 @@ export class HomePage implements OnInit {
     console.log(datas)
   }
 
+  public progress = 0;
+
+
   ngOnInit() {
+    setInterval(() => {
+      this.progress += 0.01;
+
+      // Reset the progress bar when it reaches 100%
+      // to continuously show the demo
+      if (this.progress > 1) {
+        setTimeout(() => {
+          this.progress = 0;
+        }, 1000);
+      }
+    }, 50);
   }
 
 }

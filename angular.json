@@ -111,7 +111,10 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": ["src/global.scss", "src/theme/variables.scss",
+            "node_modules/@fortawesome/fontawesome-free/global.scss"
+          
+          ],
             "scripts": []
           },
           "configurations": {

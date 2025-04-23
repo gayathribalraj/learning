@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'existing-leads',
+    loadChildren: () => import('./existing-leads/existing-leads.module').then( m => m.ExistingLeadsPageModule)
   }
 ];
 

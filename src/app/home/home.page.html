@@ -14,25 +14,40 @@
 <div class="card-group">
 
   <!-- First card  -->
-  <ion-card (click)="routeCard(detail)" *ngFor="let detail of data">
+  <ion-card  *ngFor="let detail of data">   
+    
+    <!-- (click)="routeCard(detail)" -->
+
     <ion-card-content>
     
     <ion-grid>
             <ion-row>
-                <ion-col size="2"><ion-icon name="person-circle-outline"></ion-icon></ion-col>
-                <ion-col ><h3>{{detail.name}}</h3></ion-col>
+              <ion-avatar>
+                <img alt="per1" src="../../assets/img/per1.png" />
+              </ion-avatar> <ion-col ><h3>{{detail.Name}}</h3></ion-col>
+            
+             <ion-avatar>
+              <img alt="phone" src="../../assets/img/phone.png"/>
+             </ion-avatar>
+              <ion-col> <h3>{{detail.Mobile}}</h3></ion-col>
             </ion-row>
     
             <ion-row>
-              <ion-col size="2"><ion-icon name="phone-portrait-outline"></ion-icon></ion-col>
-              <ion-col> <h3>{{detail.mobile}}</h3></ion-col>
-            </ion-row>
+              <ion-avatar>
+                <img alt="rupee" src="../../assets/img/rupee.png"/>
+              </ion-avatar>
+              <ion-col ><h3>{{detail.Amount}}</h3></ion-col>
     
-            <ion-row>
-            <ion-col size="2"><ion-icon name="cash-outline"></ion-icon></ion-col> 
-            <ion-col ><h3>{{detail.amount}}</h3></ion-col>
-    
-            </ion-row>
+              <ion-avatar>
+              <img alt="location" src="../../assets/img/map.png"/>
+              </ion-avatar>
+              <ion-col ><h3>{{detail.Location}}</h3></ion-col>
+              </ion-row>
+              
+              <ion-row>
+                <ion-progress-bar class="progress"   [value]="detail.progress"></ion-progress-bar>
+                </ion-row>
+              
     </ion-grid>
     
     </ion-card-content>

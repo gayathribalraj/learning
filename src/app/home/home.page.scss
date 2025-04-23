@@ -2,31 +2,33 @@
     display: flex;
     flex-direction: column;
     max-width: 35%;
+    height: auto;
     cursor: pointer;
 }
-
-
-ion-icon{
-    font-size: 20px;
-    color: rgb(0, 0, 255);
-
-    
+img{
+    width: 50%;
+    height: 50%;
+    // border: 2px solid rgba(0, 0, 0, 0.637);
 }
-ion-icon:hover {
-    color: #2c3e50;
-  }
+
+
 
 ion-card{
-    background-color: #FFFFFF;
+    background-color: #8bcff078;
     border-radius: 10px;
+
 
     
 }
 
 ion-card:hover {
-    box-shadow: 10px 10px 10px rgba(0, 0, 255, 0.045);
+    box-shadow: 10px 10px 10px rgba(13, 13, 221, 0.26);
 
-}
+      }
+// ion-avatar{
+// width: 15%;
+// height: 30%;
+// }
 
 h3:hover{
 font-size: medium;
@@ -35,6 +37,27 @@ font-size: medium;
 h3{
     font-size: 15px;
     color: #000;
-    font-family:'Times New Roman', Times, serif;
+    position: relative;
+    right: 30%;
+    font-weight:500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 
 }
+
+// ion-card-content{
+//     text-align: justify;
+// }
+
+ion-grid{
+    text-align: justify;
+
+}
+
+.progress{
+    width: 20px;
+}
+
+
+
+
