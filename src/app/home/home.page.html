@@ -14,9 +14,8 @@
 <div class="card-group">
 
   <!-- First card  -->
-  <ion-card  *ngFor="let detail of data">   
+  <ion-card (click)="routeCard(detail)" *ngFor="let detail of data">   
     
-    <!-- (click)="routeCard(detail)" -->
 
     <ion-card-content>
     
@@ -45,7 +44,7 @@
               </ion-row>
               
               <ion-row>
-                <ion-progress-bar class="progress"   [value]="detail.progress"></ion-progress-bar>
+                <ion-progress-bar class="detail.progress" [value]="detail.progress"></ion-progress-bar>
                 </ion-row>
               
     </ion-grid>
