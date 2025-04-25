@@ -11,18 +11,32 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
-    <ion-card-header>
+
+  <ion-alert 
+  [isOpen]="isAlertOpen"
+  header= "View User Details"
+  hedding="Name : "
+  message={{(storeData)}}
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>
+
+
+
+
+  <ion-card *ngFor="let val of cardObj"  >
+    <div (click)="setOpen(true,val)">
+    <ion-card-header >
       <ion-card-subtitle>
         <ion-chip>
           <div>
           <ion-avatar >
-            <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="Silhouette of a person's head" src="../../assets/img/per1.png" />
           </ion-avatar>
         </div>
       <div class="profile">
-          <ion-label><h2>Gayathri B</h2></ion-label>
-          <ion-label><h2>89023456778</h2></ion-label>
+          <ion-label><h2>{{val.Name}}</h2></ion-label>
+          <ion-label><h2>{{val.UserId}}</h2></ion-label>
         </div>
       <div>
           <div class="circle-progress">
@@ -40,32 +54,50 @@
    <div class="eachIcons">
     <div>
     <i style='font-size:15px' class='fas'>&#xf879;</i>
-    <h3>894512370</h3>
+    <h3>{{val.MobileNumber}}</h3>
   </div>
    <div> 
     <i style='font-size:15px' class='fas'>&#xf3c5;</i>
-    <h3>Chennai</h3>
+    <h3>{{val.Location}}</h3>
   </div>
    <div>
     <i style='font-size:15px' class='fas'>&#xf156;</i>
-    <h3>50,00000</h3>
+    <h3>{{val.Amount}}</h3>
   </div>
 
   </div>
   
 
   </ion-card-content>
-  <ion-accordion-group >
+
+</div>
+
+
+  <ion-accordion-group>
     <ion-accordion value="first"  toggleIcon="ellipsis-horizontal">
       <ion-item slot="header" color="light">
         <ion-label>More</ion-label>
       </ion-item>
       <div class="ion-padding" slot="content">
-        
-     <div ><ion-icon name="eye"></ion-icon></div>
-     <div ><ion-icon name="create-outline"></ion-icon></div>
-     <div ><ion-icon name="documents-outline"></ion-icon></div>
-     <div ><ion-icon name="cloud-upload-outline"></ion-icon></div>      
+     <div>
+     <div class="eye" style="font-size: x-large;" (click)="ViewDetailes()"><ion-icon name="eye"></ion-icon></div>
+     <div><p style="font-size: x-small;">View Application<p></p></div>
+    </div>
+
+    <div>
+     <div class="create-outline" style="font-size: x-large;" ><ion-icon name="create-outline"></ion-icon></div>
+     <div><p style="font-size: x-small;">Nominee Details<p></p></div> 
+    </div>
+    <div>
+     <div class="documents-outline" style="font-size: x-large;"><ion-icon name="documents-outline"></ion-icon>
+     <div><p style="font-size: x-small;">Document upload<p></div> 
+    </div>
+  </div>
+  <div>
+     <div class="cloud-upload-outline" style="font-size: x-large;"><ion-icon name="cloud-upload-outline"></ion-icon></div> 
+    <div><p style="font-size: x-small;">Submit<p></div> 
+    </div>
+       
     </div>
     
     </ion-accordion>

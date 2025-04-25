@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-existing-leads',
@@ -8,8 +9,66 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExistingLeadsPage implements OnInit {
 
-  constructor() { }
+  cardObj = [
+    {
+      Name:"Gayathri",
+      UserId:"123455787899",
+      MobileNumber : "8520123789",
+      Location:"chennai",
+      Amount :"25,00000"
+    },
+    {
+      Name:"Moni",
+      UserId:"123455787849",
+      MobileNumber : "8520123789",
+      Location:"chennai",
+      Amount :"25,00000"
 
+    },
+    {
+      Name:"Neha",
+      UserId:"123455787899",
+      MobileNumber : "8520123789",
+      Location:"chennai",
+      Amount :"25,00000"
+
+    }
+
+  ]
+
+
+  alertData: string = '';
+  storeData:string='';
+
+  constructor( public router: Router) {
+
+  }
+
+  ViewDetailes(){
+    this.router.navigate(['/show-detailes'])
+   }
+  
+  
+
+
+
+
+   
+
+  isAlertOpen = false;
+  isAlertNotOpen =false
+  alertButtons = ['Ok'];
+
+
+  setOpen(isOpen: boolean, values?:any) {
+    this.isAlertOpen = isOpen;
+    this.alertData =  JSON.stringify(values)
+    this.storeData = this.alertData
+
+  }
+
+
+ 
   ngOnInit() {
   }
 

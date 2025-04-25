@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'existing-leads',
+    redirectTo: 'show-detailes',
     pathMatch: 'full'
   },
   {
@@ -22,7 +22,12 @@ const routes: Routes = [
   {
     path: 'existing-leads',
     loadChildren: () => import('./existing-leads/existing-leads.module').then( m => m.ExistingLeadsPageModule)
+  },
+  {
+    path: 'show-detailes',
+    loadChildren: () => import('./show-detailes/show-detailes.module').then( m => m.ShowDetailesPageModule)
   }
+
 ];
 
 @NgModule({

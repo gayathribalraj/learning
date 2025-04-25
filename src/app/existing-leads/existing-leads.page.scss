@@ -29,8 +29,7 @@ ion-avatar{
    margin-right: 30%;
    align-items: center;
    justify-content: center;
-   align-items: center;
-   
+   align-items: center;   
 
 }
 .profile{
@@ -42,6 +41,12 @@ ion-avatar{
     position: relative;
     left: 20%;
 
+}
+
+.fas:hover{
+    cursor: pointer;
+    color: #a21e1e;
+   
 }
 .icon1{
     width: 20px;
@@ -66,19 +71,22 @@ img{
 ion-chip{
     background-color: rgba(240, 255, 255, 0);
 }
+.ion-padding{
+    background: linear-gradient(to right,#3d6a9d82, #58c3e79b);
+
+}
 
 .ion-padding{
     display: flex;
     justify-content: space-between;
-    font-size:x-large;
- 
 }
 
+
 .circle-progress {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: conic-gradient(#4caf50 0% 60%, #e0e0e0 0% 60%);
+    background: conic-gradient(#078d0ef8 0% 60%, #e0e0e0 0% 60%);
     position: relative;
   }
   
@@ -90,6 +98,16 @@ ion-chip{
     top: 0;
     left: 0;
     background: transparent;
-    clip-path: circle(50% at 50% 50%);
   }
- 
+
+ ion-label,h2{
+ font-weight: bold;
+ color: #000;
+}
+.ion-padding > div{
+    
+    color: rgb(36, 36, 138);
+    cursor: pointer;
+
+
+}
