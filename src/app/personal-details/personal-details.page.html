@@ -1,0 +1,35 @@
+
+<ion-content [fullscreen]="true">
+
+<form [formGroup]="persnolForm" (ngSubmit)="saveData() ">
+
+  <ion-item  >
+    <ion-label position="floating">Name </ion-label>
+    <ion-input formControlName="name" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Date of Birth</ion-label>
+    <ion-input formControlName="dob" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Age</ion-label>
+    <ion-input formControlName="age" type="number"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" >Gender</ion-label>
+    <ion-input formControlName="gender" type="text"></ion-input>
+    </ion-item>
+
+    <ion-button expand="half" type="Submit" id="open-loading" >Save</ion-button>
+    <ion-loading trigger="open-loading" message="Loading..." [duration]="1000" spinner="circles"></ion-loading>
+
+</form>
+
+
+
+
+
+</ion-content>

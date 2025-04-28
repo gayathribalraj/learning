@@ -9,9 +9,19 @@
     <ion-toolbar>
       <ion-title size="large">Existing Leads</ion-title>
     </ion-toolbar>
+
   </ion-header>
 
+  <div class="totalapplication">
+      <ion-label>Total Applications</ion-label>
+      <ion-badge color="danger">{{cardObj.length}}</ion-badge>
+  </div>
 
+  <div class="focusSearch">
+    <ion-searchbar show-clear-button="focus"></ion-searchbar>
+  </div>
+
+<!-- 
   <ion-alert 
   [isOpen]="isAlertOpen"
   header= "View User Details"
@@ -21,11 +31,11 @@
   (didDismiss)="setOpen(false)"
 ></ion-alert>
 
+ -->
 
 
-
-  <ion-card *ngFor="let val of cardObj"  >
-    <div (click)="setOpen(true,val)">
+  <ion-card *ngFor="let val of cardObj; "  >
+    <div>
     <ion-card-header >
       <ion-card-subtitle>
         <ion-chip>
@@ -35,8 +45,8 @@
           </ion-avatar>
         </div>
       <div class="profile">
-          <ion-label><h2>{{val.Name}}</h2></ion-label>
-          <ion-label><h2>{{val.UserId}}</h2></ion-label>
+          <ion-label><h2>{{val?.name}}</h2></ion-label>
+          <ion-label><h2>{{val?.dob}}</h2></ion-label>
         </div>
       <div>
           <div class="circle-progress">
@@ -54,15 +64,15 @@
    <div class="eachIcons">
     <div>
     <i style='font-size:15px' class='fas'>&#xf879;</i>
-    <h3>{{val.MobileNumber}}</h3>
+    <h3>{{val?.age}}</h3>
   </div>
    <div> 
     <i style='font-size:15px' class='fas'>&#xf3c5;</i>
-    <h3>{{val.Location}}</h3>
+    <h3>{{val?.gender}}</h3>
   </div>
    <div>
     <i style='font-size:15px' class='fas'>&#xf156;</i>
-    <h3>{{val.Amount}}</h3>
+    <h3>{{50000}}</h3>
   </div>
 
   </div>
@@ -80,22 +90,21 @@
       </ion-item>
       <div class="ion-padding" slot="content">
      <div>
-     <div class="eye" style="font-size: x-large;" (click)="ViewDetailes()"><ion-icon name="eye"></ion-icon></div>
-     <div><p style="font-size: x-small;">View Application<p></p></div>
+     <div class="padding-icons" style="font-size: x-large;"><ion-icon name="eye"></ion-icon></div>
+     <div class="padding-subtext"><p style="font-size:x-small;">View Application<p></p></div>
     </div>
 
     <div>
-     <div class="create-outline" style="font-size: x-large;" ><ion-icon name="create-outline"></ion-icon></div>
-     <div><p style="font-size: x-small;">Nominee Details<p></p></div> 
+     <div class="padding-icons" style="font-size: x-large;" ><ion-icon name="create-outline"></ion-icon></div>
+     <div class="padding-subtext"><p style="font-size: x-small;">Nominee Details<p></p></div> 
     </div>
     <div>
-     <div class="documents-outline" style="font-size: x-large;"><ion-icon name="documents-outline"></ion-icon>
-     <div><p style="font-size: x-small;">Document upload<p></div> 
+     <div class="padding-icons" style="font-size: x-large;"><ion-icon name="documents-outline"></ion-icon></div>
+     <div class="padding-subtext" ><p style="font-size: x-small;">Document upload<p></div> 
     </div>
-  </div>
   <div>
-     <div class="cloud-upload-outline" style="font-size: x-large;"><ion-icon name="cloud-upload-outline"></ion-icon></div> 
-    <div><p style="font-size: x-small;">Submit<p></div> 
+     <div class="padding-icons" style="font-size: x-large;"><ion-icon name="cloud-upload-outline"></ion-icon></div> 
+    <div class="padding-subtext" ><p style="font-size: x-small;">Submit<p></div> 
     </div>
        
     </div>
@@ -105,4 +114,15 @@
   </ion-accordion-group>
  
   </ion-card>
+
+ <div>
+  <h1 *ngIf="cardObj.length ==0">No Reacord Found</h1>
+ </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end"  (click)="showDetailes()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

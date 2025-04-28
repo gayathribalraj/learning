@@ -1,3 +1,5 @@
+import { query } from '@angular/animations';
+import { ɵnormalizeQueryParams } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -9,67 +11,72 @@ import { Router } from '@angular/router';
 })
 export class ExistingLeadsPage implements OnInit {
 
-  cardObj = [
-    {
-      Name:"Gayathri",
-      UserId:"123455787899",
-      MobileNumber : "8520123789",
-      Location:"chennai",
-      Amount :"25,00000"
-    },
-    {
-      Name:"Moni",
-      UserId:"123455787849",
-      MobileNumber : "8520123789",
-      Location:"chennai",
-      Amount :"25,00000"
+  personData =[];
+  
 
-    },
-    {
-      Name:"Neha",
-      UserId:"123455787899",
-      MobileNumber : "8520123789",
-      Location:"chennai",
-      Amount :"25,00000"
+  cardObj:any[] = []
+    // {
+    //   Name:"Gayathri",
+    //   UserId:"123455787899",
+    //   MobileNumber : "8520123789",
+    //   Location:"chennai",
+    //   Amount :"25,00000"
+    // },
+    // {
+    //   Name:"Moni",
+    //   UserId:"123455787849",
+    //   MobileNumber : "8520123789",
+    //   Location:"chennai",
+    //   Amount :"25,00000"
 
-    }
+    // },
+    // {
+    //   Name:"Neha",
+    //   UserId:"123455787899",
+    //   MobileNumber : "8520123789",
+    //   Location:"chennai",
+    //   Amount :"25,00000"
 
-  ]
+    // }
+
+  
 
 
-  alertData: string = '';
-  storeData:string='';
+  // alertData: string = '';
+  // storeData:string='';
 
   constructor( public router: Router) {
 
   }
 
-  ViewDetailes(){
-    this.router.navigate(['/show-detailes'])
+  showDetailes(){
+    this.router.navigate(['/show-detailes']);
+
    }
   
-  
-
-
-
-
    
 
-  isAlertOpen = false;
-  isAlertNotOpen =false
-  alertButtons = ['Ok'];
+  // isAlertOpen = false;
+  // isAlertNotOpen =false
+  // alertButtons = ['Ok'];
 
 
-  setOpen(isOpen: boolean, values?:any) {
-    this.isAlertOpen = isOpen;
-    this.alertData =  JSON.stringify(values)
-    this.storeData = this.alertData
+  // setOpen(isOpen: boolean, values?:any) {
+  //   this.isAlertOpen = isOpen;
+  //   this.alertData =  JSON.stringify(values)
+  //   this.storeData = this.alertData
 
-  }
+  // }
 
 
  
   ngOnInit() {
+    const getUserData:string | null = localStorage.getItem("persnolFormData");
+    console.log(getUserData,"getUserData")
+    if(getUserData){
+      this.cardObj.push(JSON.parse(getUserData));
+    }
+    console.log(this.cardObj)
   }
 
 }

@@ -7,6 +7,9 @@ ion-card{
 
 
 }
+
+
+
 ion-chip{
 display: flex;
 flex-direction: row;
@@ -79,6 +82,8 @@ ion-chip{
 .ion-padding{
     display: flex;
     justify-content: space-between;
+    padding: 5px;
+
 }
 
 
@@ -104,10 +109,36 @@ ion-chip{
  font-weight: bold;
  color: #000;
 }
+
+
 .ion-padding > div{
     
     color: rgb(36, 36, 138);
     cursor: pointer;
+    padding: 10px;
+
+    
 
 
+}
+
+.padding-icons{
+    display: flex;
+    justify-content: center;
+}
+
+.totalapplication{
+    display: flex;
+    font-size: x-large;
+    font-family:'Times New Roman', Times, serif;
+    padding: 20px;
+    justify-content: center;
+}
+.focusSearch{
+ max-width: 80%;
+
+}
+.button-native{
+    display: flex;
+    justify-content:right;
 }

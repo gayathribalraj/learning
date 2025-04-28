@@ -26,6 +26,18 @@ const routes: Routes = [
   {
     path: 'show-detailes',
     loadChildren: () => import('./show-detailes/show-detailes.module').then( m => m.ShowDetailesPageModule)
+  },
+  {
+    path: 'personal-details',
+    loadChildren: () => import('./personal-details/personal-details.module').then( m => m.PersonalDetailsPageModule)
+  },
+  {
+    path: 'kyc',
+    loadChildren: () => import('./kyc/kyc.module').then( m => m.KycPageModule)
+  },
+  {
+    path: 'address',
+    loadChildren: () => import('./address/address.module').then( m => m.AddressPageModule)
   }
 
 ];

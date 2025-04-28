@@ -1,13 +1,39 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ShowDetailes</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ShowDetailes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+<ion-content>
+
+
+<!-- <div class="top-bar"> -->
+  <ion-tabs>
+    <ion-tab-bar color="light" slot="top">
+      <ion-tab-button tab="personal-details">
+        <ion-icon name="id-card-outline"></ion-icon>
+        <ion-label>Personal Details</ion-label>
+      </ion-tab-button>
+    
+      <ion-tab-button tab="kyc">
+        <ion-icon name="card-outline"></ion-icon>
+        <ion-label>KYC</ion-label>
+      </ion-tab-button>
+    
+      <ion-tab-button tab="address">
+        <ion-icon name="person-add-outline"></ion-icon>
+        <ion-label>Address</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+  
 </ion-content>
