@@ -1,27 +1,27 @@
-
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">kyc</ion-title>
+      <ion-title size="large">KYC</ion-title>
     </ion-toolbar>
   </ion-header>
-<h1>huh</h1>
 
+  <form [formGroup]="kycForm" (ngSubmit)="saveKycData()">
+    <ion-item>
+      <ion-label position="floating">KYC Proof</ion-label>
+      <ion-input formControlName="kycproof" type="text"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="kycForm.get('kycproof')?.touched && kycForm.get('kycproof')?.hasError('required')">
+      KYC Proof is required.
+    </ion-text>
 
-<form [formGroup]="kycForm">
-  <ion-item>
-    <ion-label position="floating">KYC Proof </ion-label>
-    <ion-input formControlName="kycproof" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">KYC Number </ion-label>
-    <ion-input formControlName="kycnumber" type="text"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label position="floating">KYC Number</ion-label>
+      <ion-input formControlName="kycnumber" type="text"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="kycForm.get('kycnumber')?.touched && kycForm.get('kycnumber')?.hasError('required')">
+      KYC Number is required.
+    </ion-text>
 
-
-</form>
-
-
-
+    <ion-button expand="half" type="submit" id="open-loading">Save</ion-button>
+  </form>
 </ion-content>

@@ -14,7 +14,9 @@ export class AppComponent {
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/spam', icon: 'warning' },
     { title: 'Home', url: '/home', icon: 'home' },
-    { title: 'Existing Leads', url: '/existing-leads', icon: 'paper-plane' }
+    { title: 'Existing Leads', url: '/existing-leads', icon: 'paper-plane' },
+    { title: 'Create Form', url: '/show-detailes', icon: 'heart' }
+
 
 
 

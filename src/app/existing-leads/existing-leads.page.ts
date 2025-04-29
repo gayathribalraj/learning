@@ -1,7 +1,5 @@
-import { query } from '@angular/animations';
-import { ɵnormalizeQueryParams } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-existing-leads',
@@ -11,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class ExistingLeadsPage implements OnInit {
 
-  personData =[];
   
 
   cardObj:any[] = []
@@ -45,16 +42,24 @@ export class ExistingLeadsPage implements OnInit {
   // alertData: string = '';
   // storeData:string='';
 
-  constructor( public router: Router) {
+  progress:number=0;
+
+  constructor( public router: Router, private activatedrouter:ActivatedRoute) {
 
   }
 
-  showDetailes(){
-    this.router.navigate(['/show-detailes']);
+    showpop(popval:any){
+    try{
 
+      this.router.navigate(['/personal-details'], { queryParams: { key:JSON.stringify(popval) }})
+      console.log("datas"+popval)
+    }catch(error){
+      console.log("datas"+error)
+    }
    }
   
    
+
 
   // isAlertOpen = false;
   // isAlertNotOpen =false
@@ -68,13 +73,14 @@ export class ExistingLeadsPage implements OnInit {
 
   // }
 
-
+ 
  
   ngOnInit() {
     const getUserData:string | null = localStorage.getItem("persnolFormData");
     console.log(getUserData,"getUserData")
     if(getUserData){
-      this.cardObj.push(JSON.parse(getUserData));
+      
+      this.cardObj = JSON.parse(getUserData);
     }
     console.log(this.cardObj)
   }

@@ -7,24 +7,48 @@
     <ion-label position="floating">Name </ion-label>
     <ion-input formControlName="name" type="text"></ion-input>
   </ion-item>
+  <ion-text color="danger" *ngIf="persnolForm.get('name')?.touched && persnolForm.get('name')?.hasError('required')">
+    Name is Required.
+  </ion-text>
+  
 
   <ion-item>
-    <ion-label position="floating">Date of Birth</ion-label>
-    <ion-input formControlName="dob" type="text"></ion-input>
+    <ion-label position="floating">Date of Birth</ion-label><br>
+    <ion-input formControlName="dob" type="date"></ion-input>
   </ion-item>
+  <ion-text color="danger" *ngIf="persnolForm.get('dob')?.touched && persnolForm.get('name')?.hasError('required')">
+   DateOfBirth is Required
+  </ion-text>
+
 
   <ion-item>
     <ion-label position="floating">Age</ion-label>
     <ion-input formControlName="age" type="number"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label position="floating" >Gender</ion-label>
-    <ion-input formControlName="gender" type="text"></ion-input>
-    </ion-item>
+  <ion-text color="danger" *ngIf="persnolForm.get('age')?.touched && 
+  (persnolForm.get('age')?.hasError('required') || 
+   persnolForm.get('age')?.hasError('min') || 
+   persnolForm.get('age')?.hasError('max'))">
+Age is required. Minimum age is 18.
+</ion-text>
 
-    <ion-button expand="half" type="Submit" id="open-loading" >Save</ion-button>
-    <ion-loading trigger="open-loading" message="Loading..." [duration]="1000" spinner="circles"></ion-loading>
+
+  <ion-item>
+    <ion-label  position="floating" >Gender</ion-label><br>
+    <ion-select formControlName="gender" placeholder="Select Gender" interface="popover">
+      <ion-select-option value="Male">Male</ion-select-option>
+      <ion-select-option value="Female">Female</ion-select-option>
+      <ion-select-option value="Other">Other</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-text color="danger" *ngIf="persnolForm.get('gender')?.touched && persnolForm.get('gender')?.hasError('required')">
+   Gender is Required
+  </ion-text><br>
+  
+
+    <ion-button expand="half" type="Submit" id="open-loading">Save</ion-button>
 
 </form>
 

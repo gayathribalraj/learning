@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class KycPage implements OnInit {
   kycForm!:FormGroup;
 
+
   
 
 
@@ -23,10 +24,55 @@ export class KycPage implements OnInit {
   ngOnInit() {
 
     this.kycForm = this.formBuilder.group({
-      kycproof:[''],
-      kycnumber:[''],
+      kycproof:['',Validators.required],
+      kycnumber:['',Validators.required],
     
     })
   }
+
+  saveKycData(){
+
+    console.log(this.kycForm.value)
+
+    const getKycDatas =localStorage.getItem("kycDatase")
+
+
+
+    if(!getKycDatas){
+
+     let  kycDetailes =[] ;
+
+     kycDetailes.push(this.kycForm.value);
+
+     localStorage.setItem("kycDatase" , JSON.stringify(kycDetailes))
+      
+
+    }
+    else{
+
+      let storeData = JSON.parse(getKycDatas);
+      storeData.push(this.kycForm.value)
+      localStorage.setItem("kycDatase" , (JSON.stringify(storeData)))
+      console.log(storeData)
+    }
+
+    if(this.kycForm.valid){
+      console.log("saved")
+
+    }
+
+    else{
+      console.log("not saved")
+      this.kycForm.markAllAsTouched();
+    }
+
+
+
+
+  }
+
+
+
+  
 
 }

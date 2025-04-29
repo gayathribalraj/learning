@@ -35,3 +35,14 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+.custom-toast {
+     -o-text-overflow: clip;
+     color: rgb(0, 0, 0);
+    --font-size: 16px;
+    --border-radius: 10px;
+    --background: #f1a1a1b5;
+    --padding:20px;
+    --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+
+  }

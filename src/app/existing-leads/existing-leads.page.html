@@ -34,7 +34,7 @@
  -->
 
 
-  <ion-card *ngFor="let val of cardObj; "  >
+  <ion-card *ngFor="let val of cardObj"  (click)="showpop(val)" >
     <div>
     <ion-card-header >
       <ion-card-subtitle>
@@ -52,6 +52,7 @@
           <div class="circle-progress">
             <div class="progress"></div>
           </div>
+          <div class="progressCount">50%</div>
         </div>
 
         </ion-chip>
@@ -119,7 +120,7 @@
   <h1 *ngIf="cardObj.length ==0">No Reacord Found</h1>
  </div>
 
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end"  (click)="showDetailes()">
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
