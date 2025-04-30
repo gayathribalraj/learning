@@ -7,8 +7,12 @@
 
   <form [formGroup]="kycForm" (ngSubmit)="saveKycData()">
     <ion-item>
-      <ion-label position="floating">KYC Proof</ion-label>
-      <ion-input formControlName="kycproof" type="text"></ion-input>
+      <ion-label position="floating">KYC Number</ion-label>
+      <ion-select formControlName="kycproof">
+        <ion-select-option value="aadhaar">Aadhaar Card</ion-select-option>
+        <ion-select-option value="pancard">PanCard</ion-select-option>
+        <ion-select-option value="voterid">VoterId</ion-select-option>
+      </ion-select>
     </ion-item>
     <ion-text color="danger" *ngIf="kycForm.get('kycproof')?.touched && kycForm.get('kycproof')?.hasError('required')">
       KYC Proof is required.

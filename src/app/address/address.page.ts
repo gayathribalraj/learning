@@ -9,21 +9,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 })
 export class AddressPage implements OnInit {
-  adressForm!:FormGroup;
 
-
-  constructor(public formBuilder:FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
 
-    this.adressForm = this.formBuilder.group({
-      
-      address1:[''],
-      address2:['']
-      
-      
-
-    })
   }
 
 }

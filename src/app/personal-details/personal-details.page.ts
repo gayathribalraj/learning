@@ -135,6 +135,8 @@ if (this.persnolForm.valid) {
 
     await toast.present();
   }
+
+  
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Saving...',

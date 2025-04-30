@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AlertService } from '../alert.service';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class KycPage implements OnInit {
   
 
 
-  constructor(public formBuilder:FormBuilder) {
+  constructor(public formBuilder:FormBuilder, public global: AlertService,
+  ) {
+
 
 
    }
@@ -31,8 +34,10 @@ export class KycPage implements OnInit {
   }
 
   saveKycData(){
+    if(this.kycForm.valid){
+    this.global.showLoading()
 
-    console.log(this.kycForm.value)
+    console.log("KYC Form Value", this.kycForm.value)
 
     const getKycDatas =localStorage.getItem("kycDatase")
 
@@ -53,17 +58,24 @@ export class KycPage implements OnInit {
       let storeData = JSON.parse(getKycDatas);
       storeData.push(this.kycForm.value)
       localStorage.setItem("kycDatase" , (JSON.stringify(storeData)))
-      console.log(storeData)
+      console.log("store data", localStorage.getItem("kycDatase"))
     }
 
-    if(this.kycForm.valid){
+    
       console.log("saved")
+      
 
+      this.global.presentAlert('KYC Detailes','Saved SuccessFully.......');
+      setTimeout(() => {
+      this.global.DissmissLoading()
+     }, 1000);
+      
     }
 
     else{
       console.log("not saved")
       this.kycForm.markAllAsTouched();
+      this.global.presentToast()
     }
 
 
@@ -72,7 +84,7 @@ export class KycPage implements OnInit {
   }
 
 
-
+//i have done store localstorage in storedata so this value getdata and after show the html card 
   
 
 }

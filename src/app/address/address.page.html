@@ -1,16 +1,22 @@
 
 
-<ion-content [fullscreen]="true">
-<h2>addres</h2>
-<form [formGroup]="adressForm">
-  <ion-item>
-    <ion-label position="floating">address1 </ion-label>
-    <ion-input formControlName="address1" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">address2 </ion-label>
-    <ion-input formControlName="address2" type="text"></ion-input>
-  </ion-item>
+<ion-header>
+<!-- <h2>Address Details </h2> -->
+  <ion-segment value="custom">
+    <ion-segment-button value="custom">
+      <ion-label>present address </ion-label>
+    </ion-segment-button>
 
-</form>
+    <ion-segment-button value="segment">
+      <ion-label>permanent address</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <div>
+    <app-permanent-address></app-permanent-address>
+    <!-- <app-present-address></app-present-address> -->
+  </div>
 </ion-content>

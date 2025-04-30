@@ -22,31 +22,15 @@
     <ion-grid>
             <ion-row>
               <ion-avatar>
-                <img alt="per1" src="../../assets/img/per1.png" />
-              </ion-avatar> <ion-col ><h3>{{detail.Name}}</h3></ion-col>
+                <img alt="phone" style="color:black;" src="../../assets/img/phone.png"/>
+              </ion-avatar> <ion-col ><h3>{{detail.kycproof}}</h3></ion-col>
             
              <ion-avatar>
               <img alt="phone" src="../../assets/img/phone.png"/>
              </ion-avatar>
-              <ion-col> <h3>{{detail.Mobile}}</h3></ion-col>
+              <ion-col> <h3>{{detail.kycnumber}}</h3></ion-col>
             </ion-row>
-    
-            <ion-row>
-              <ion-avatar>
-                <img alt="rupee" src="../../assets/img/rupee.png"/>
-              </ion-avatar>
-              <ion-col ><h3>{{detail.Amount}}</h3></ion-col>
-    
-              <ion-avatar>
-              <img alt="location" src="../../assets/img/map.png"/>
-              </ion-avatar>
-              <ion-col ><h3>{{detail.Location}}</h3></ion-col>
-              </ion-row>
-              
-              <ion-row>
-                <ion-progress-bar class="detail.progress" [value]="detail.progress"></ion-progress-bar>
-                </ion-row>
-              
+       
     </ion-grid>
     
     </ion-card-content>
