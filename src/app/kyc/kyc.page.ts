@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertService } from '../alert.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -13,16 +14,27 @@ import { AlertService } from '../alert.service';
 export class KycPage implements OnInit {
   kycForm!:FormGroup;
 
-
+  storeData: any;
+  userkycData: any;
   
 
 
-  constructor(public formBuilder:FormBuilder, public global: AlertService,
+  constructor(public formBuilder:FormBuilder, public global: AlertService,public activatedRoute:ActivatedRoute
   ) {
+
+this.activatedRoute.queryParams.subscribe((data:any)=>
+{
+  this.userkycData = JSON.parse(data['test']);
+  console.log("userdata",this.userkycData)
+  
+})
 
 
 
    }
+
+
+   
 
   ngOnInit() {
 
@@ -30,7 +42,11 @@ export class KycPage implements OnInit {
       kycproof:['',Validators.required],
       kycnumber:['',Validators.required],
     
-    })
+    });
+    if (this.userkycData) {
+      this.routeCard();
+    }
+    
   }
 
   saveKycData(){
@@ -38,6 +54,9 @@ export class KycPage implements OnInit {
     this.global.showLoading()
 
     console.log("KYC Form Value", this.kycForm.value)
+
+    // localStorage.setItem("kycDatase" , JSON.stringify(kycDetailes))
+
 
     const getKycDatas =localStorage.getItem("kycDatase")
 
@@ -55,10 +74,10 @@ export class KycPage implements OnInit {
     }
     else{
 
-      let storeData = JSON.parse(getKycDatas);
-      storeData.push(this.kycForm.value)
-      localStorage.setItem("kycDatase" , (JSON.stringify(storeData)))
-      console.log("store data", localStorage.getItem("kycDatase"))
+      this.storeData = JSON.parse(getKycDatas);
+      this.storeData.push(this.kycForm.value)
+      const latestData = localStorage.setItem("kycDatase" , (JSON.stringify(this.storeData)))
+      console.log(latestData)
     }
 
     
@@ -79,12 +98,13 @@ export class KycPage implements OnInit {
     }
 
 
-
-
   }
 
+  routeCard(){
+    this.kycForm.controls['kycproof'].setValue(this.userkycData['kycproof']),
+    this.kycForm.controls['kycnumber'].setValue(this.userkycData['kycnumber'])
+  }
 
-//i have done store localstorage in storedata so this value getdata and after show the html card 
   
 
 }

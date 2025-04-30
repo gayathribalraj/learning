@@ -15,47 +15,22 @@
 
   <!-- First card  -->
   <ion-card (click)="routeCard(detail)" *ngFor="let detail of data">   
-    
+    <ion-card-header>
+      <ion-card-title>KYC Details</ion-card-title>
+   </ion-card-header>
 
-    <ion-card-content>
+   <ion-card-content>
+    <div class="cardRow">
+    <div>
+    <h3>KYC Proof : {{detail.kycproof}}</h3>
+  </div>
+  <div>
+    <h3>KYC Details{{detail.kycnumber}}</h3>
+  </div>
+</div>
+  </ion-card-content>
+
     
-    <ion-grid>
-            <ion-row>
-              <ion-avatar>
-                <img alt="phone" style="color:black;" src="../../assets/img/phone.png"/>
-              </ion-avatar> <ion-col ><h3>{{detail.kycproof}}</h3></ion-col>
-            
-             <ion-avatar>
-              <img alt="phone" src="../../assets/img/phone.png"/>
-             </ion-avatar>
-              <ion-col> <h3>{{detail.kycnumber}}</h3></ion-col>
-            </ion-row>
-       
-    </ion-grid>
-    
-    </ion-card-content>
   </ion-card>
-  
-
-
-  
-  
-
-
-
-
-  
-
 </div>
 
-
-
-
-
-
-
-
-
-
-
-</ion-content>

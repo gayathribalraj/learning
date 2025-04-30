@@ -1,63 +1,18 @@
 .card-group{
-    display: flex;
-    flex-direction: column;
-    max-width: 35%;
-    height: auto;
-    cursor: pointer;
+    display: list-item;
 }
-img{
-    width: 50%;
-    height: 50%;
-    // border: 2px solid rgba(0, 0, 0, 0.637);
-}
-
-
-
 ion-card{
-    background-color: #8bcff078;
-    border-radius: 10px;
-
-
-    
+    max-width: 30%;
+    background-color: azure;
+    color: black;
+    font-size: larger;
+    font-family:sans-serif;
+};
+h1,h2,h3{
+    font-weight: bold
 }
-
-ion-card:hover {
-    box-shadow: 10px 10px 10px rgba(13, 13, 221, 0.26);
-
-      }
-// ion-avatar{
-// width: 15%;
-// height: 30%;
-// }
-
-h3:hover{
-font-size: medium;
-}
-
-h3{
-    font-size: 15px;
-    color: #000;
-    position: relative;
-    right: 30%;
-    font-weight:500;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+.cardRow > div{
+    display:flex;
+    flex-direction: column;
 
 }
-
-// ion-card-content{
-//     text-align: justify;
-// }
-
-ion-grid{
-    text-align: justify;
-
-}
-
-.progress{
-    width: 20px;
-}
-
-
-
-

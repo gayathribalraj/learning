@@ -13,8 +13,9 @@ export class HomePage implements OnInit {
   constructor(public router: Router) {}
 
   routeCard(datas: any) {
-    this.router.navigate(['/dashboard'], { queryParams: { test: JSON.stringify(datas) } });
-    console.log(datas);
+    console.log("navigate", datas);
+    this.router.navigate(['/kyc'], { queryParams: { test: JSON.stringify(datas) } });
+    
   }
 
   public progress = 0;
